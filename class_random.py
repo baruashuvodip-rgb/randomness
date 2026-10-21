@@ -1,10 +1,10 @@
 import time #For random seed
 
 class LinearCongruential:
-    a=1664525
-    c=1013904223
-    modulus=2**32
-    x_0=time.time()
+    _a=1664525
+    _c=1013904223
+    _modulus=2**32
+    _x_0=time.time()
 
     def __init__(self,a=0.0,b=1.0):
         self.a=a
@@ -20,6 +20,6 @@ class LinearCongruential:
                 self._x_0=(self._a*self._x_0+self._c)%self._modulus
                 rans.append((self.b-self.a)*(self._x_0/(self._modulus-1.0))
                 +self.a)
-                return rans
+            return rans
         else:
-            raise Exception("N mustbeanintegergreaterthanzero")
+            raise Exception("N must be an integer greater than zero")
